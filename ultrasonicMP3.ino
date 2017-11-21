@@ -2,8 +2,8 @@
 #include <SdFat.h>
 #include <SdFatUtil.h>
 #include <SFEMP3Shield.h>
-#define trigPin 13
-#define echoPin 12
+#define trigPin 6
+#define echoPin 5
 
 SdFat sd;
 SFEMP3Shield MP3player;
@@ -27,18 +27,15 @@ void loop(){
   duration = pulseIn(echoPin, HIGH);
   distance = (duration/2) / 29.1;
 
-  if(distance<300){
   Serial.print("distance : ");
-  Serial.print(distance);
+  Serial.println(distance);
 
   if (distance<30) {
-    MP3player.playTrack(1);   
-    Serial.println("1");
-    delay(10);
-  } else {
+    MP3player.playTrack(2);   
+    delay(300);
     MP3player.playTrack(0);
-    Serial.println("non");
-    delay(10);
+    delay(3000);
   }
-  } 
+  
+  delay(100);
 }
