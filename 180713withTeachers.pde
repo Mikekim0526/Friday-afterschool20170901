@@ -23,7 +23,5 @@ void draw() {
   b=random(0,255);
   delay(100);
   ellipse(x,y,diameter, diameter);
-  x=random(0,600);
-  y=random(0,400);
-  diameter=random(20,200);
+  diameter=random(20,500);
 }
